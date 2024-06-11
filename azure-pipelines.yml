@@ -12,7 +12,7 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '20.x'
   displayName: 'Install Node.js'
 
 - script: |
@@ -27,4 +27,4 @@ steps:
     appType: 'webAppLinux'
     WebAppName: 'front-prod-azure'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    RuntimeStack: 'NODE|18-lts'
+    RuntimeStack: 'NODE|20-lts'
