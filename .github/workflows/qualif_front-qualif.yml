@@ -78,8 +78,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create pull request from qualif to main
-        uses: peter-evans/create-pull-request@v4
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6.0.5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Merge branch 'qualif' into 'main'
