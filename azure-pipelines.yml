@@ -19,12 +19,10 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
-
-- task: AzureRmWebAppDeployment@4
+- task: AzureWebApp@1
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure for Students(2)(ae88eae1-c86b-421f-9718-17b152500d98)'
+    azureSubscription: 'Azure for Students(1)(ae88eae1-c86b-421f-9718-17b152500d98)'
     appType: 'webAppLinux'
-    WebAppName: 'front-prod-azure'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    RuntimeStack: 'NODE|20-lts'
+    appName: 'front-prod-azure'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'NODE|18-lts'
