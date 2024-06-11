@@ -29,4 +29,4 @@ steps:
     resourceGroupName: 'ProjetJavaVue-Azure-prod'
     slotName: 'production'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    runtimeStack: 'NODE|18-lts'
+    runtimeStack: 'NODE|20-lts'
