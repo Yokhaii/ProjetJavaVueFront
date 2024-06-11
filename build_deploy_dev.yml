@@ -19,10 +19,8 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
-- task: AzureWebApp@1
+- task: PublishPipelineArtifact@1
   inputs:
-    azureSubscription: 'Azure for Students(ae88eae1-c86b-421f-9718-17b152500d98)'
-    appType: 'webAppLinux'
-    appName: 'front-dev-azure'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    runtimeStack: 'NODE|20-lts'
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'jar'
+    publishLocation: 'pipeline'
