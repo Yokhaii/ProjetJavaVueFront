@@ -75,6 +75,16 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
+        
+      - name: Set environment variables for Dev
+        uses: cschleiden/replace-tokens@v1
+        with:
+          tokenPrefix: '--('
+          tokenSuffix: ')--'
+          files: '["*/.js"]'
+        env:
+          URL: https://back-dev-github.azurewebsites.net/
+        
       
       - name: Login to Azure
         uses: azure/login@v1
